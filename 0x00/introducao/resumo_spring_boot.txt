@@ -1,0 +1,21 @@
+1)O que é Spring Boot Framework?
+O Spring Framework é uma estrutura de aplicativo de código aberto e um contêiner de Inversão de Controle escrito em Java. Ele é projetado para simplificar o design do aplicativo, manipulando automaticamente funcionalidades de baixo nível. Isso permite que os desenvolvedores se concentrem na lógica de negócios. O Spring também é muito adaptável com muitos módulos de extensão que aumentam os recursos do framework.
+
+2) Quais são os benefícios e recursos que Spring Boot fornece?
+Leve: o Spring é leve no uso de recursos, com o Spring Framework básico custando apenas 2 MB de armazenamento.
+Escalável: a interface de gerenciamento de transações do Spring pode escalar tanto para uma transação local em um único banco de dados até transações globais usando o módulo JTA
+Tratamento de exceções: o tratamento de exceções é fácil graças aos abundantes recursos da API para lidar com exceções em cada módulo.
+Arquitetura em camadas: permite que você use as partes do programa necessárias e descarte o resto.
+POJO habilitado: Plain Old Java Object Programming permite teste e integração contínuos.
+Código aberto: gratuito para todos e sem dependência de fornecedor.
+Inversão de controle (IOC): Obtém acoplamento fraco via IOC, permitindo que os objetos forneçam suas dependências a outros objetos, em vez de objetos dependentes.
+Orientado a Aspectos (AOP): O Spring oferece suporte à programação orientada a Aspectos, um paradigma que separa a lógica de negócios do aplicativo dos serviços do sistema.
+
+3) Como é feita a adição de novas dependências (JPA, Hibernate, etc…) ?
+Spring Boot utiliza o Apache Maven para baixar as dependências e sub-dependências (JPA, Hibernate, etc…) do seu projeto atráves do POM.xml.
+
+4) Na sua opinião, qual é a melhor IDE para trabalhar com o Spring Boot: Spring Tools Suites, IntelliJ IDEA, Eclipse ou NetBeans ?
+IntelliJ IDEA
+
+5) O que é Spring Initializr?
+Spring Initializr é uma ferramenta baseada na Web que gera a estrutura do projeto Spring Boot . O erro de grafia em initializr é inspirado em initializr . Os IDEs modernos integraram o Spring Initializr que fornece a estrutura inicial do projeto. É muito fácil para os desenvolvedores selecionar a configuração necessária para seus projetos. A ferramenta Spring Initializr cuida da configuração a seguir para qualquer projeto baseado em Spring. 
