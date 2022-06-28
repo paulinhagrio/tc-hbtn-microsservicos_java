@@ -19,15 +19,12 @@ public class Telefone {
     private String numero;
 
     @ManyToOne
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Cliente cliente;
 
     public Telefone(){
-
     }
 
-    public Telefone(Long id, String ddd, String numero, Cliente cliente) {
-        this.id = id;
+    public Telefone(String ddd, String numero, Cliente cliente) {
         this.ddd = ddd;
         this.numero = numero;
         this.cliente = cliente;

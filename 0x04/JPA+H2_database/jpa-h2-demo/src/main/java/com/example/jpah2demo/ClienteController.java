@@ -10,7 +10,6 @@ import java.util.Optional;
 
 
 @RestController
-//@RequestMapping("/cliente")
 public class ClienteController {
 
     @Autowired
@@ -18,26 +17,17 @@ public class ClienteController {
 
     @PostMapping("/addClient")
     public ResponseEntity<Cliente> addClient(@RequestBody Cliente cliente) {
-        cliente.setId(null);
-        Cliente clienteCreated = clienteRepository.save(cliente);
-        return ResponseEntity.status(HttpStatus.CREATED).body(clienteCreated);
-//        try {
-//            Cliente clienteCreated = clienteRepository.save(cliente);
-//            return new ResponseEntity<Cliente>(clienteCreated, HttpStatus.CREATED);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-   }
+        try{
+            return new ResponseEntity<>(clienteRepository.save(cliente), HttpStatus.CREATED);
+        } catch (Exception e){
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
     @GetMapping("/findAllClients")
     public ResponseEntity<List<Cliente>> findAllClients() {
         try {
-            List<Cliente> clientes = clienteRepository.findAll();
-
-            if (clientes.isEmpty()) return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.NO_CONTENT);
-
-            return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
+            return new ResponseEntity(clienteRepository.findAll(), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

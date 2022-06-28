@@ -17,7 +17,7 @@ public class Endereco {
     private String logradouro;
 
     @Column
-    private Integer endereco;
+    private String endereco;
 
     @Column
     private String numero;
@@ -32,14 +32,13 @@ public class Endereco {
     private String estado;
 
     @ManyToOne
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Cliente cliente;
 
     public Endereco(){
 
     }
 
-    public Endereco(Long id, String logradouro, Integer endereco, String numero, String bairro, String cidade, String estado, Cliente cliente) {
+    public Endereco(Long id, String logradouro, String endereco, String numero, String bairro, String cidade, String estado, Cliente cliente) {
         this.id = id;
         this.logradouro = logradouro;
         this.endereco = endereco;
@@ -66,11 +65,11 @@ public class Endereco {
         this.logradouro = logradouro;
     }
 
-    public Integer getEndereco() {
+    public String getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Integer endereco) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 

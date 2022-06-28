@@ -11,10 +11,25 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Madonna\", \r\n    \"idade\":50,\r\n    \"email\":\"madonna@madonna.com\",\r\n    \"telefone\":[{\r\n        \"ddd\":\"11\",\r\n        \"numero\":\"12345\"\r\n    }],\r\n    \"endereco\":[{\r\n      \"logradouro\":\"rua\",\r\n      \"endereco\":\"milton goncalves\",\r\n      \"numero\":\"7\",\r\n      \"bairro\":\"estrelas\",\r\n      \"cidade\":\"sao paulo\",\r\n      \"estado\":\"sp\",\r\n      \"cep\":\"3456-321\"\r\n\r\n    }]  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "ADD",
+					"raw": "http://localhost:8081/api-jpa-h2/addClient",
+					"protocol": "http",
 					"host": [
-						"ADD"
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api-jpa-h2",
+						"addClient"
 					]
 				}
 			},
@@ -24,7 +39,19 @@
 			"name": "FIND_ALL",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api-jpa-h2/findAllClients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api-jpa-h2",
+						"findAllClients"
+					]
+				}
 			},
 			"response": []
 		},
@@ -32,7 +59,20 @@
 			"name": "FIND_BY_ID",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api-jpa-h2/findClientById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api-jpa-h2",
+						"findClientById",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
@@ -40,7 +80,20 @@
 			"name": "DELETE_BY_ID",
 			"request": {
 				"method": "DELETE",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api-jpa-h2/removeClientById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api-jpa-h2",
+						"removeClientById",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
@@ -48,7 +101,29 @@
 			"name": "UPDATE",
 			"request": {
 				"method": "PUT",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Yvete\", \r\n    \"idade\":50,\r\n    \"email\":\"madonna@madonna.com\",\r\n    \"telefone\":[{\r\n        \"ddd\":\"11\",\r\n        \"numero\":\"12345\"\r\n    }],\r\n    \"endereco\":[{\r\n      \"logradouro\":\"rua\",\r\n      \"endereco\":\"milton goncalves\",\r\n      \"numero\":\"7\",\r\n      \"bairro\":\"estrelas\",\r\n      \"cidade\":\"sao paulo\",\r\n      \"estado\":\"sp\",\r\n      \"cep\":\"3456-321\"\r\n\r\n    }]  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api-jpa-h2/updateClientById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api-jpa-h2",
+						"updateClientById",
+						"1"
+					]
+				}
 			},
 			"response": []
 		}

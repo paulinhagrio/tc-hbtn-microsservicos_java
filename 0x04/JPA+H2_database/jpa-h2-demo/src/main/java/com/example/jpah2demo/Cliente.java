@@ -1,7 +1,6 @@
 package com.example.jpah2demo;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 
@@ -21,12 +20,10 @@ public class Cliente {
     @Column
     private String email;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-    @JoinColumn(name = "telefone_id", referencedColumnName = "id")
+    @OneToMany(mappedBy = "id")
     private List<Telefone> telefones;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-    @JoinColumn(name = "endereco_id", referencedColumnName = "id")
+    @OneToMany(mappedBy = "id")
     private List<Endereco> enderecos;
 
     public Cliente(){
