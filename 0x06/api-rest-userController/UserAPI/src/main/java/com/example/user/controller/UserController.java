@@ -1,8 +1,8 @@
-package com.example.user.com.example.user.controller;
+package com.example.user.controller;
 
-import com.example.user.com.example.user.exception.CPFException;
-import com.example.user.com.example.user.exception.UserIdException;
-import com.example.user.com.example.user.exception.UserNameException;
+import com.example.user.exception.CPFException;
+import com.example.user.exception.UserIdException;
+import com.example.user.exception.UserNameException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
