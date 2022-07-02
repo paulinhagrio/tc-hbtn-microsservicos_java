@@ -5,19 +5,19 @@ import java.time.Period;
 
 public class Calculator {
     public Double sum(Double number1, Double number2) {
-        if (number1 == null && number2 == null)
+        if (number1 == null || number2 == null)
             throw new NullPointerException("Número 1 e número 2 são obrigatórios.");
         return number1 + number2;
     }
 
     public Double sub(Double number1, Double number2) {
-        if (number1 == null && number2 == null)
+        if (number1 == null || number2 == null)
             throw new NullPointerException("Número 1 e número 2 são obrigatórios.");
         return number1 - number2;
     }
 
     public Double divide (Double number1, Double number2)  {
-       if (number1 == null && number2 == null){
+       if (number1 == null || number2 == null){
            throw new NullPointerException("Número 1 e número 2 são obrigatórios.");
        }
        if (number2 == 0){

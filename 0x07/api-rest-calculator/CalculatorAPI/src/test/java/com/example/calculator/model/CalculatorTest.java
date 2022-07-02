@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 
 import static com.jayway.jsonpath.internal.path.PathCompiler.fail;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
     Calculator calculator;
@@ -23,13 +23,16 @@ public class CalculatorTest {
 
     @Test
     public void numbersNullSumTest() {
-        try{
-            calculator.sum(100.0, null);
-            fail("Missing Exception");
-        }catch(Throwable ex){
-            assertEquals(NullPointerException.class, ex.getClass());
-            assertEquals("Número 1 e número 2 são obrigatórios.", ex.getMessage());
-        }
+
+    Calculator calculadora = new Calculator();
+    String msg = "Número 1 e número 2 são obrigatórios.";
+
+    String mensagem = assertThrows(NullPointerException.class, () -> {
+                calculadora.sum(null, null);
+            }
+    ).getMessage();
+    assertEquals(msg, mensagem);
+
     }
 
     @Test
@@ -71,9 +74,11 @@ public class CalculatorTest {
         // Integer = 5 -> Hexadecimal = "37"
         // Integer = 170 -> Binary = "AA"
         assertEquals("1", calculator.integerToHexadecimal(1));
-        assertEquals("37", calculator.integerToHexadecimal(5));
+        assertNotEquals("25", calculator.integerToHexadecimal(5));
         assertEquals("AA", calculator.integerToHexadecimal(170));
     }
+
+
 
     @Test
     void calculeDayBetweenDateTest() {
